@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/add_item"
+        android:title="@string/item_add" />
+    <item
+        android:id="@+id/remove_item"
+        android:title="@string/item_remove" />
+    <item
+        android:id="@+id/others_item"
+        android:title="@string/item_help">
+        <menu>
+            <item
+                android:id="@+id/contact_sub_item"
+                android:title="@string/item_contact" />
+            <item
+                android:id="@+id/update_sub_item"
+                android:title="@string/item_update" />
+        </menu>
+    </item>
+
+</menu>

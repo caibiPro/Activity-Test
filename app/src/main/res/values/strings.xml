@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FirstActivity</string>
+    <string name="button_1_text">Button 1</string>
+    <string name="item_add">Add</string>
+    <string name="item_remove">Remove</string>
+    <string name="item_help">Help</string>
+    <string name="item_contact">Contact Us</string>
+    <string name="item_update">Update</string>
+    <string name="button_text_2">Button 2</string>
+    <string name="button_text_3">Button 3</string>
+</resources>
