@@ -32,7 +32,6 @@ class FirstActivity : AppCompatActivity() {
 
         setContentView(view)
 
-
         // 使用 API LEVEL 30 后推荐的 Activity Result API
         // 1. 创建 ActivityResultContract (自定义/通用两种方式)
         val contract = ActivityResultContracts.StartActivityForResult()

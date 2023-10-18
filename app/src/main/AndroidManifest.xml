@@ -12,9 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstActivity"
         tools:targetApi="31">
-        <activity android:name=".ThirdActivity"
-            android:label="This is ThirdActivity"
+        <activity
+            android:name=".ThirdActivity"
             android:exported="false"
+            android:label="This is ThirdActivity"
             tools:ignore="AppLinkUrlError">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -28,6 +29,7 @@
             android:label="This is SecondActivity">
             <intent-filter>
                 <action android:name="com.example.firstactivity.ACTION_START" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="com.example.firstactivity.MY_CATEGORY" />
             </intent-filter>
