@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -31,6 +32,20 @@ class FirstActivity : AppCompatActivity() {
 
         setContentView(view)
 
+
+        // 使用 API LEVEL 30 后推荐的 Activity Result API
+        // 1. 创建 ActivityResultContract (自定义/通用两种方式)
+        val contract = ActivityResultContracts.StartActivityForResult()
+
+        // 2. 注册结果回调
+        val startForResult = registerForActivityResult(contract) { result: ActivityResult ->
+            if (result.resultCode == RESULT_OK) {
+                val intent = result.data
+                val returnData = intent?.getStringExtra("text")
+                Log.d("FirstActivity", "returned data is $returnData")
+            }
+        }
+
         binding.button1.setOnClickListener {
             Toast.makeText(this, "You clicked Button 1", Toast.LENGTH_SHORT).show()
 //            view.isVisible = false
@@ -57,17 +72,6 @@ class FirstActivity : AppCompatActivity() {
 //            val intent = Intent(this, SecondActivity::class.java)
 //            startActivityForResult()
 
-            // 使用 API LEVEL 30 后推荐的 Activity Result API
-            // 1. 创建 ActivityResultContract (自定义/通用两种方式)
-            val resultContract = ActivityResultContracts.StartActivityForResult()
-
-            // 2. 注册结果回调
-            val startForResult =
-                registerForActivityResult(resultContract) { result: ActivityResult ->
-                    if (result.resultCode == RESULT_OK) {
-                        val intent = result.data
-                    }
-                }
             startForResult.launch(Intent(this, SecondActivity::class.java))
         }
     }
