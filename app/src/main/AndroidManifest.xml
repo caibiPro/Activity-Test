@@ -19,7 +19,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-
+                <data android:scheme="https" />
             </intent-filter>
         </activity>
         <activity
@@ -30,7 +30,6 @@
                 <action android:name="com.example.firstactivity.ACTION_START" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="com.example.firstactivity.MY_CATEGORY" />
-                <data android:scheme="https" />
             </intent-filter>
         </activity>
         <activity
